@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//PL" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Admin</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+<%= javascript_include_tag :fckeditor %>
+<%= javascript_include_tag 'prototype' %>
+<%= javascript_include_tag 'scriptaculous' %>
+<%= stylesheet_link_tag 'main' %>
+<%= stylesheet_link_tag 'admin' %>
+</head>
+<body>
+<div class="Table_01_admin">
+	<div class="glowna-slices2mini-01_admin"></div>
+	<div class="glowna-slices2mini-00_admin">
+		<%= render :partial => 'admin/home/menu' %>
+	</div>
+	<div class="glowna-slices2mini-02_admin">
+		<%= yield -%>
+	</div>
+	<div class="glowna-slices2mini-03_admin"></div>
+</div>
+</body>
+</html>

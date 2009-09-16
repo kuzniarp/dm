@@ -1,0 +1,29 @@
+﻿Admin <%= link_to 'Wyloguj', :controller => 'home', :action => 'logout' %><br />
+<ul id="subpage_list">
+<% Subpage.find(:all, :order => 'page_order').each do |subpage| %>
+	<li class="subpage" id="subpage_<%= subpage.id -%>">
+		<%= image_tag "/images/sort_btn.png", :style => "cursor:pointer;" -%> <%= link_to subpage.name, :controller => 'subpage', :action => 'edit', :id => subpage.id %>
+		<%= (subpage.is_a?(Gallery) and !subpage.albums.empty?) ? link_to_function(image_tag("/images/delete_btn.png"), "alert('Nie można usunąć galerii zawierającej albumy. Najpierw usuń albumy.')") : link_to(image_tag("/images/delete_btn.png"), {:controller => 'subpage', :action => 'delete', :id => subpage.id}, :confirm => "Jesteś pewien, że chcesz usunąć tę stronę?") %>
+		<% if subpage.class == Gallery %>
+			<ul id="album_list">
+			<% subpage.albums.each do |album| %>
+				<li class="album" id="album_<%= album.id -%>">
+					<%= image_tag "/images/sort_btn.png", :style => "cursor:pointer;" -%> <%= link_to album.name, :controller => 'album', :action => 'edit', :id => album.id %>
+					<%= !album.photos.empty? ? link_to_function(image_tag("/images/delete_btn.png"), "alert('Nie można usunąć albumu zawierającego zdjęcia. Najpierw usuń zdjęcia.')") : link_to(image_tag("/images/delete_btn.png"), {:controller => 'album', :action => 'delete', :id => album.id}, :confirm => "Jesteś pewien, że chcesz usunąć album?") %>
+				</li>
+			<% end %>
+			</ul>
+			<%= link_to "Nowy album", {:controller => 'album', :action => 'edit'} %><br />
+		<% end %>
+	</li>
+<% end %>
+</ul>
+<%= link_to "Nowa podstrona", {:controller => 'subpage', :action => 'edit'} %><br />
+
+<%= sortable_element 'subpage_list', 
+      :complete => visual_effect(:highlight, 'list'), 
+      :url => { :controller => "subpage", :action => "order" } %>
+
+<%= sortable_element 'album_list', 
+      :complete => visual_effect(:highlight, 'list'), 
+      :url => { :controller => "album", :action => "order" } %>
