@@ -27,7 +27,7 @@ class Admin::SubpageController < ApplicationController
 	end
 	
 	def order
-		params[:subpage_list].each_with_index do |id,i|
+		params["subpage_list_#{params[:subpage_id]}"].each_with_index do |id,i|
 			Subpage.find_by_id(id).update_attribute(:page_order,i)
 		end
 		render :nothing => true	

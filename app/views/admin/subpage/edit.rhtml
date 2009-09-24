@@ -1,4 +1,4 @@
-﻿<% form_tag :controller => 'subpage', :action => 'edit' do %>
+<% form_tag :controller => 'subpage', :action => 'edit' do %>
     <label>Nazwa:</label><br />
 	<%= text_field 'subpage', 'name' %><br />
     <label>Nagłówek:</label><br />
@@ -8,6 +8,7 @@
     <label>Typ:</label><br />
 	<%= select 'subpage', 'type', [["Strona statyczna", "Staticpage"], ["Galeria", "Gallery"]] %><br />
 	<%= hidden_field 'subpage', 'id' -%>
+    <%= hidden_field 'subpage', 'parent_id', {:value => params[:parent_id]} -%>
 	<%= submit_tag 'Zapisz' %>
 <% end %>
 <h3>Meta tagi</h3><br />

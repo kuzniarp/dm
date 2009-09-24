@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081212084006) do
+ActiveRecord::Schema.define(:version => 20090924215239) do
 
   create_table "albums", :force => true do |t|
     t.string  "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20081212084006) do
     t.string  "url_name"
     t.string  "type"
     t.integer "page_order"
+    t.integer "parent_id"
   end
 
 end

@@ -3,6 +3,8 @@ class Subpage < ActiveRecord::Base
 	has_one :meta_tag, :as => :content
 	before_save :update_url_name, :update_header
 
+  acts_as_tree :order => "page_order"
+
   def page_order_last?
     self.page_order+1 == Subpage.count
   end

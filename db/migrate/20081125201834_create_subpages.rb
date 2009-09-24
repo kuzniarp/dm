@@ -1,7 +1,7 @@
 class CreateSubpages < ActiveRecord::Migration
   def self.up
     create_table :subpages do |t|
-      t.string :name
+    t.string :name
 	  t.string :header
 	  t.text :description
 	  t.string :url_name

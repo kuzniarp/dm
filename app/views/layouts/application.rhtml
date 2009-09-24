@@ -24,9 +24,9 @@
       </div>
       <div class="menu">
 		<ul class="menu">
-			<% homepage = Subpage.find_by_page_order(0) %>
+			<% homepage = Subpage.find(:first, :conditions => "parent_id is null and page_order = 0") %>
 			<li><%= link_to(homepage.name, '/') if homepage -%></li>
-			<% Subpage.find(:all, :conditions => "page_order > 0", :order => 'page_order').each do |subpage| %>
+			<% Subpage.find(:all, :conditions => "parent_id is null and page_order > 0", :order => 'page_order').each do |subpage| %>
 				<li><%= link_to h(subpage.name), show_page_url(:url_name => subpage.url_name) -%></li>
 				<% if false and subpage.class == Gallery and !subpage.albums.empty? %>
 				<ul class="albums">

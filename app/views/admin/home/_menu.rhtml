@@ -1,11 +1,11 @@
 ﻿Admin <%= link_to 'Wyloguj', :controller => 'home', :action => 'logout' %><br />
-<ul id="subpage_list">
-<% Subpage.find(:all, :order => 'page_order').each do |subpage| %>
+<ul id="subpage_list_">
+<% Subpage.find(:all, :conditions => "parent_id is null", :order => 'page_order').each do |subpage| %>
 	<li class="subpage" id="subpage_<%= subpage.id -%>">
 		<%= image_tag "/images/sort_btn.png", :style => "cursor:pointer;" -%> <%= link_to subpage.name, :controller => 'subpage', :action => 'edit', :id => subpage.id %>
 		<%= (subpage.is_a?(Gallery) and !subpage.albums.empty?) ? link_to_function(image_tag("/images/delete_btn.png"), "alert('Nie można usunąć galerii zawierającej albumy. Najpierw usuń albumy.')") : link_to(image_tag("/images/delete_btn.png"), {:controller => 'subpage', :action => 'delete', :id => subpage.id}, :confirm => "Jesteś pewien, że chcesz usunąć tę stronę?") %>
 		<% if subpage.class == Gallery %>
-			<ul id="album_list">
+			<ul id="album_list_<%= subpage.id %>">
 			<% subpage.albums.each do |album| %>
 				<li class="album" id="album_<%= album.id -%>">
 					<%= image_tag "/images/sort_btn.png", :style => "cursor:pointer;" -%> <%= link_to album.name, :controller => 'album', :action => 'edit', :id => album.id %>
@@ -14,16 +14,34 @@
 			<% end %>
 			</ul>
 			<%= link_to "Nowy album", {:controller => 'album', :action => 'edit'} %><br />
+        <% else %>
+			<ul id="subpage_list_<%= subpage.id %>">
+			<% subpage.children.each do |page| %>
+				<li class="album" id="page_<%= page.id -%>">
+					<%= image_tag "/images/sort_btn.png", :style => "cursor:pointer;" -%> <%= link_to page.name, :controller => 'subpage', :action => 'edit', :id => page.id %>
+					<%= link_to(image_tag("/images/delete_btn.png"), {:controller => 'subpage', :action => 'delete', :id => page.id}, :confirm => "Jesteś pewien, że chcesz usunąć stronę?") %>
+				</li>
+			<% end %>
+			</ul>
+			<%= link_to "Nowa podstrona", {:controller => 'subpage', :action => 'edit', :parent_id => subpage.id} %><br />
 		<% end %>
 	</li>
 <% end %>
 </ul>
-<%= link_to "Nowa podstrona", {:controller => 'subpage', :action => 'edit'} %><br />
+<%= link_to "Nowa strona", {:controller => 'subpage', :action => 'edit'} %><br />
 
-<%= sortable_element 'subpage_list', 
+<%= sortable_element 'subpage_list_',
       :complete => visual_effect(:highlight, 'list'), 
       :url => { :controller => "subpage", :action => "order" } %>
 
-<%= sortable_element 'album_list', 
+<% Gallery.all.each do |gallery| %>
+<%= sortable_element "album_list_#{gallery.id}",
       :complete => visual_effect(:highlight, 'list'), 
       :url => { :controller => "album", :action => "order" } %>
+<% end %>
+
+<% Subpage.all(:conditions => "parent_id is null").each do |subpage| %>
+<%= sortable_element "subpage_list_#{subpage.id}",
+      :complete => visual_effect(:highlight, 'list'),
+      :url => { :controller => "subpage", :action => "order", :subpage_id => subpage.id } %>
+<% end %>
