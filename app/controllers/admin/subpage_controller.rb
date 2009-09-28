@@ -15,7 +15,7 @@ class Admin::SubpageController < ApplicationController
 				end
 				redirect_to :action => 'index'
 			else
-				params[:subpage][:page_order] = Subpage.count
+				params[:subpage][:page_order] = params[:subpage][:parent_id] ? Subpage.find(params[:subpage][:parent_id]).children.size : Subpage.count
 				@subpage = Subpage.new(params[:subpage])
 				@subpage.type = params[:subpage][:type]
 				@subpage.save

@@ -26809,3 +26809,691 @@ ActionController::RoutingError (No route matches "/images/h_bgr.png" with {:meth
     script/server:3
 
 Rendering D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-28 22:56:07) [GET]
+  Session ID: 3295a901ad1f38dde2669f115e15d120
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mAlbum Load IDs For Limited Eager Loading (0.000000)[0m   [0;1mSELECT DISTINCT "albums".id FROM "albums" LEFT OUTER JOIN "photos" ON photos.album_id = albums.id WHERE (photos.album_id is not null) ORDER BY random() LIMIT 3[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" ORDER BY page_order desc LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null and page_order = 0) LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null and page_order > 0) ORDER BY page_order[0m
+Completed in 0.29900 (3 reqs/sec) | Rendering: 0.04700 (15%) | DB: 0.00300 (1%) | 200 OK [http://localhost/]
+
+
+Processing SubpageController#index (for 127.0.0.1 at 2009-09-28 22:56:18) [GET]
+  Session ID: 47a99f7a7ac927d2d88c0820477b00a0
+  Parameters: {"action"=>"index", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+Redirected to http://localhost:3009/admin/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 0.05400 (18 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://localhost/admin]
+
+
+Processing HomeController#login (for 127.0.0.1 at 2009-09-28 22:56:19) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--e497e8c537a6bf85f641840cc5cd068046a0e1b8
+  Parameters: {"action"=>"login", "controller"=>"admin/home"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+Rendering template within layouts/login
+Rendering admin/home/login
+Completed in 0.06400 (15 reqs/sec) | Rendering: 0.00700 (10%) | DB: 0.00000 (0%) | 200 OK [http://localhost/admin/login]
+
+
+Processing HomeController#login (for 127.0.0.1 at 2009-09-28 22:56:30) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNDhjMTJjZDc2YTNmMWE0NWI5NzUyODUzNjU4NGMz
+OWIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--22802ae0ebd0b43035e52958cb562562a452b99b
+  Parameters: {"user"=>{"password"=>"DobreMaszyny.11", "email"=>"admin"}, "commit"=>"Login", "authenticity_token"=>"59f04e63a9d1f257d9e0a256751cdd343d970658", "action"=>"login", "controller"=>"admin/home"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+Redirected to http://localhost:3009/admin
+Completed in 0.11200 (8 reqs/sec) | DB: 0.00100 (0%) | 302 Found [http://localhost/admin/login]
+
+
+Processing SubpageController#index (for 127.0.0.1 at 2009-09-28 22:56:31) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"index", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.002000)[0m   [0;1mSELECT * FROM "subpages" [0m
+Rendering template within layouts/admin
+Rendering admin/subpage/index
+  [4;35;1mSubpage Load (0.002000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;36;1mGallery Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.12000)
+Completed in 0.24000 (4 reqs/sec) | Rendering: 0.17800 (74%) | DB: 0.00600 (2%) | 200 OK [http://localhost/admin]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 22:56:41) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"8", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '8') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 8 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02700)
+Completed in 0.12600 (7 reqs/sec) | Rendering: 0.08000 (63%) | DB: 0.00600 (4%) | 200 OK [http://localhost/admin/subpage/edit/8]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 22:56:52) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "controller"=>"admin/subpage", "parent_id"=>"4"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.001000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."id" IS NULL) LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02700)
+Completed in 0.06800 (14 reqs/sec) | Rendering: 0.03000 (44%) | DB: 0.00600 (8%) | 200 OK [http://localhost/admin/subpage/edit?parent_id=4]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 22:57:30) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"commit"=>"Zapisz", "authenticity_token"=>"59f04e63a9d1f257d9e0a256751cdd343d970658", "action"=>"edit", "controller"=>"admin/subpage", "subpage"=>{"name"=>"prod3", "type"=>"Staticpage", "id"=>"", "header"=>"", "description"=>"<p>prod3</p>", "parent_id"=>"4"}}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."id" = 4) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM "subpages" WHERE ("subpages".parent_id = 4) [0m
+WARNING: Can't mass-assign these protected attributes: type, id
+  [4;35;1mSubpage Create (0.001000)[0m   [0mINSERT INTO "subpages" ("name", "type", "header", "description", "page_order", "url_name", "parent_id") VALUES('prod3', 'Staticpage', 'prod3', '<p>prod3</p>', 2, 'prod3', 4)[0m
+Redirected to http://localhost:3009/admin/subpage/edit/10
+Completed in 0.15300 (6 reqs/sec) | DB: 0.00200 (1%) | 302 Found [http://localhost/admin/subpage/edit]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 22:57:31) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"10", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '10') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 10 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02800)
+Completed in 0.06900 (14 reqs/sec) | Rendering: 0.03100 (44%) | DB: 0.00500 (7%) | 200 OK [http://localhost/admin/subpage/edit/10]
+
+
+Processing SubpageController#delete (for 127.0.0.1 at 2009-09-28 22:57:45) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"delete", "id"=>"8", "controller"=>"admin/subpage"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."id" = '8') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 8) ORDER BY page_order[0m
+  [4;35;1mStaticpage Destroy (0.001000)[0m   [0m DELETE FROM "subpages"
+ WHERE "id" = 8
+[0m
+Redirected to http://localhost:3009/admin
+Completed in 0.06800 (14 reqs/sec) | DB: 0.00400 (5%) | 302 Found [http://localhost/admin/subpage/delete/8]
+
+
+Processing SubpageController#index (for 127.0.0.1 at 2009-09-28 22:57:46) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"index", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" [0m
+Rendering template within layouts/admin
+Rendering admin/subpage/index
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;36;1mGallery Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02800)
+Completed in 0.07000 (14 reqs/sec) | Rendering: 0.02500 (35%) | DB: 0.00600 (8%) | 200 OK [http://localhost/admin]
+
+
+Processing SubpageController#delete (for 127.0.0.1 at 2009-09-28 22:57:51) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"delete", "id"=>"9", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '9') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 9) ORDER BY page_order[0m
+  [4;36;1mStaticpage Destroy (0.001000)[0m   [0;1m DELETE FROM "subpages"
+ WHERE "id" = 9
+[0m
+Redirected to http://localhost:3009/admin
+Completed in 0.05100 (19 reqs/sec) | DB: 0.00300 (5%) | 302 Found [http://localhost/admin/subpage/delete/9]
+
+
+Processing SubpageController#index (for 127.0.0.1 at 2009-09-28 22:57:52) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"index", "controller"=>"admin/subpage"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" [0m
+Rendering template within layouts/admin
+Rendering admin/subpage/index
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02900)
+Completed in 0.06900 (14 reqs/sec) | Rendering: 0.02800 (40%) | DB: 0.00500 (7%) | 200 OK [http://localhost/admin]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 22:57:57) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"10", "controller"=>"admin/subpage"}
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."id" = '10') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 10 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;36;1mGallery Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02700)
+Completed in 0.07100 (14 reqs/sec) | Rendering: 0.03100 (43%) | DB: 0.00400 (5%) | 200 OK [http://localhost/admin/subpage/edit/10]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:04:56) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"10", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '10') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 10 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.002000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.03300)
+Completed in 0.11200 (8 reqs/sec) | Rendering: 0.04500 (40%) | DB: 0.00900 (8%) | 200 OK [http://localhost/admin/subpage/edit/10]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:06:27) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"10", "controller"=>"admin/subpage"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."id" = '10') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 10 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;36;1mGallery Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.10500)
+Completed in 0.14500 (6 reqs/sec) | Rendering: 0.10800 (74%) | DB: 0.00400 (2%) | 200 OK [http://localhost/admin/subpage/edit/10]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:06:32) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"commit"=>"Zapisz", "authenticity_token"=>"59f04e63a9d1f257d9e0a256751cdd343d970658", "action"=>"edit", "controller"=>"admin/subpage", "subpage"=>{"name"=>"prod3", "type"=>"Staticpage", "id"=>"10", "header"=>"prod3", "description"=>"<p>prod3</p>", "parent_id"=>"4"}}
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '10') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: type, id
+Redirected to http://localhost:3009/admin
+Completed in 0.08500 (11 reqs/sec) | DB: 0.00300 (3%) | 302 Found [http://localhost/admin/subpage/edit]
+
+
+Processing SubpageController#index (for 127.0.0.1 at 2009-09-28 23:06:33) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"index", "controller"=>"admin/subpage"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.001000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.002000)[0m   [0mSELECT * FROM "subpages" [0m
+Rendering template within layouts/admin
+Rendering admin/subpage/index
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02500)
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.02600 (41%) | DB: 0.00700 (11%) | 200 OK [http://localhost/admin]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:06:38) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"10", "controller"=>"admin/subpage"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."id" = '10') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 10 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;36;1mGallery Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02600)
+Completed in 0.06800 (14 reqs/sec) | Rendering: 0.03000 (44%) | DB: 0.00600 (8%) | 200 OK [http://localhost/admin/subpage/edit/10]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:08:18) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"10", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '10') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 10 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.002000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02800)
+Completed in 0.16200 (6 reqs/sec) | Rendering: 0.12100 (74%) | DB: 0.00600 (3%) | 200 OK [http://localhost/admin/subpage/edit/10]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:08:41) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"10", "controller"=>"admin/subpage"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."id" = '10') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 10 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;36;1mGallery Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02700)
+Completed in 0.07600 (13 reqs/sec) | Rendering: 0.03700 (48%) | DB: 0.00400 (5%) | 200 OK [http://localhost/admin/subpage/edit/10]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:08:50) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '3') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 3 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02700)
+Completed in 0.07100 (14 reqs/sec) | Rendering: 0.03100 (43%) | DB: 0.00400 (5%) | 200 OK [http://localhost/admin/subpage/edit/3]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:08:56) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"4", "controller"=>"admin/subpage"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."id" = '4') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 4 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.002000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;36;1mGallery Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02900)
+Completed in 0.08300 (12 reqs/sec) | Rendering: 0.03500 (42%) | DB: 0.00500 (6%) | 200 OK [http://localhost/admin/subpage/edit/4]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:09:02) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"commit"=>"Zapisz", "authenticity_token"=>"59f04e63a9d1f257d9e0a256751cdd343d970658", "action"=>"edit", "controller"=>"admin/subpage", "subpage"=>{"name"=>"Oferta", "type"=>"Gallery", "id"=>"4", "header"=>"Oferta", "description"=>"", "parent_id"=>""}}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '4') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: type, id
+  [4;35;1mStaticpage Update (0.001000)[0m   [0mUPDATE "subpages" SET "type" = 'Gallery' WHERE "id" = 4[0m
+Redirected to http://localhost:3009/admin
+Completed in 0.06200 (16 reqs/sec) | DB: 0.00100 (1%) | 302 Found [http://localhost/admin/subpage/edit]
+
+
+Processing SubpageController#index (for 127.0.0.1 at 2009-09-28 23:09:03) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"index", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" [0m
+Rendering template within layouts/admin
+Rendering admin/subpage/index
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM "albums" WHERE ("albums".gallery_id = 4) [0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;36;1mGallery Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02900)
+Completed in 0.09100 (10 reqs/sec) | Rendering: 0.03000 (32%) | DB: 0.00500 (5%) | 200 OK [http://localhost/admin]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:09:11) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"4", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '4') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 4 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM "albums" WHERE ("albums".gallery_id = 4) [0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02400)
+Completed in 0.07700 (12 reqs/sec) | Rendering: 0.03300 (42%) | DB: 0.00200 (2%) | 200 OK [http://localhost/admin/subpage/edit/4]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-28 23:09:28) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mAlbum Load IDs For Limited Eager Loading (0.001000)[0m   [0mSELECT DISTINCT "albums".id FROM "albums" LEFT OUTER JOIN "photos" ON photos.album_id = albums.id WHERE (photos.album_id is not null) ORDER BY random() LIMIT 3[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" ORDER BY page_order desc LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null and page_order = 0) LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null and page_order > 0) ORDER BY page_order[0m
+Completed in 0.17100 (5 reqs/sec) | Rendering: 0.01700 (9%) | DB: 0.00300 (1%) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-28 23:09:31) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/h_bgr.png" with {:method=>:get}):
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    D:/Programy/rails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Programy/rails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    D:/Programy/rails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Programy/rails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing HomeController#show (for 127.0.0.1 at 2009-09-28 23:09:34) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"show", "controller"=>"home", "url_name"=>"oferta"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."url_name" = 'oferta') LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.001000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 4 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering home/show_gallery
+  [4;35;1mAlbum Load Including Associations (0.001000)[0m   [0mSELECT "albums"."id" AS t0_r0, "albums"."name" AS t0_r1, "albums"."description" AS t0_r2, "albums"."url_name" AS t0_r3, "albums"."gallery_id" AS t0_r4, "albums"."album_order" AS t0_r5, "photos"."id" AS t1_r0, "photos"."name" AS t1_r1, "photos"."description" AS t1_r2, "photos"."url_name" AS t1_r3, "photos"."file" AS t1_r4, "photos"."album_id" AS t1_r5 FROM "albums" LEFT OUTER JOIN "photos" ON photos.album_id = albums.id WHERE (photos.album_id is not null) ORDER BY album_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null and page_order = 0) LIMIT 1[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null and page_order > 0) ORDER BY page_order[0m
+Completed in 0.13600 (7 reqs/sec) | Rendering: 0.08600 (63%) | DB: 0.00500 (3%) | 200 OK [http://localhost/oferta]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-28 23:09:35) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {}
+
+
+ActionController::RoutingError (No route matches "/images/h_bgr.png" with {:method=>:get}):
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/recognition_optimisation.rb:67:in `recognize_path'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:384:in `recognize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:148:in `handle_request'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    D:/Programy/rails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Programy/rails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    D:/Programy/rails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    D:/Programy/rails/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering D:/Programy/rails/ruby/lib/ruby/gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:09:46) [POST]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"commit"=>"Zapisz", "authenticity_token"=>"59f04e63a9d1f257d9e0a256751cdd343d970658", "action"=>"edit", "controller"=>"admin/subpage", "subpage"=>{"name"=>"Oferta", "type"=>"Staticpage", "id"=>"4", "header"=>"Oferta", "description"=>"", "parent_id"=>""}}
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '4') LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: type, id
+  [4;35;1mGallery Update (0.001000)[0m   [0mUPDATE "subpages" SET "type" = 'Staticpage' WHERE "id" = 4[0m
+Redirected to http://localhost:3009/admin
+Completed in 0.11000 (9 reqs/sec) | DB: 0.00400 (3%) | 302 Found [http://localhost/admin/subpage/edit]
+
+
+Processing SubpageController#index (for 127.0.0.1 at 2009-09-28 23:09:47) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"index", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" [0m
+Rendering template within layouts/admin
+Rendering admin/subpage/index
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;36;1mGallery Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02600)
+Completed in 0.13900 (7 reqs/sec) | Rendering: 0.02500 (17%) | DB: 0.00500 (3%) | 200 OK [http://localhost/admin]
+
+
+Processing SubpageController#edit (for 127.0.0.1 at 2009-09-28 23:09:54) [GET]
+  Session ID: BAh7CDoMdXNlcl9pZFQ6DGNzcmZfaWQiJTQ4YzEyY2Q3NmEzZjFhNDViOTc1
+Mjg1MzY1ODRjMzliIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpGbGFz
+aDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--59ba13b4180de02ab8706dc5bd43ec0960179466
+  Parameters: {"action"=>"edit", "id"=>"10", "controller"=>"admin/subpage"}
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;35;1mMetaTag Load (0.001000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages"."id" = '10') LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/subpage/edit
+  [4;35;1mMetaTag Load (0.000000)[0m   [0mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 10 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 2) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 7) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 4) ORDER BY page_order[0m
+  [4;36;1mSubpage Load (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE ("subpages".parent_id = 3) ORDER BY page_order[0m
+  [4;35;1mGallery Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ( ("subpages"."type" = 'Gallery' ) ) [0m
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) [0m
+Rendered admin/home/_menu (0.02600)
+Completed in 0.06900 (14 reqs/sec) | Rendering: 0.03000 (43%) | DB: 0.00400 (5%) | 200 OK [http://localhost/admin/subpage/edit/10]
