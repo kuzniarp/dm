@@ -8,6 +8,10 @@ class Subpage < ActiveRecord::Base
   def page_order_last?
     self.page_order+1 == Subpage.count
   end
+
+  def self.contact
+    Subpage.find(:first, :conditions => "parent_id is null", :order => "page_order desc")
+  end
 	
 	def update_url_name
 		self.url_name = UnicodeNormalizer.normalize self.name

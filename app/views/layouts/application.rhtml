@@ -1,7 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//PL" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//PL"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title><%= @meta_tag.title -%></title>
 <meta name="description" content="<%= @meta_tag.description -%>" />
 <meta name="keywords" content="<%= @meta_tag.keywords -%>" />
@@ -10,41 +11,44 @@
 <%= javascript_include_tag 'jd.gallery' %>
 <%= javascript_include_tag 'jd.gallery.set' %>
 <%= javascript_include_tag 'ReMooz' %>
-<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAtE2XRci6LgHBnXoLlDKakxQBpUfL5Scmc4jpKtH5dDkCTuxckxT-WlEZBJ-wvs35j1CpV3XJt-C1OQ"></script>
-<%= stylesheet_link_tag 'main' %>
+<%= stylesheet_link_tag 'style' %>
 <%= stylesheet_link_tag 'jd.gallery' %>
 <%= stylesheet_link_tag 'ReMooz' %>
-
 </head>
+
 <body>
-<div class="wrapper">
-	<div class="header">
-      <div class="logo">
-        <%= link_to "dobre maszyny", "/" -%>
-      </div>
-      <div class="menu">
-		<ul class="menu">
-			<% homepage = Subpage.find(:first, :conditions => "parent_id is null and page_order = 0") %>
-			<li><%= link_to(homepage.name, '/') if homepage -%></li>
-			<% Subpage.find(:all, :conditions => "parent_id is null and page_order > 0", :order => 'page_order').each do |subpage| %>
-				<li><%= link_to h(subpage.name), show_page_url(:url_name => subpage.url_name) -%></li>
-				<% if false and subpage.class == Gallery and !subpage.albums.empty? %>
-				<ul class="albums">
-					<% subpage.albums.each do |album| %>
-						<li><%= link_to h(album.name), show_album_url(:subpage_url_name => subpage.url_name, :url_name => album.url_name) -%></li>
-					<% end %>
-				</ul>
-				<% end %>
+	<div>
+		<a href="#" class="logo"><img src="images/dm_logo.png" alt="" width="262" height="69" /></a>
+		<div id="menu">
+          <ul>
+			<% Subpage.find(:all, :conditions => "parent_id is null", :order => 'page_order').each do |subpage| %>
+				<li><%= link_to subpage.name, show_page_url(:url_name => subpage.url_name) -%></li>
 			<% end %>
 		</ul>
+        </div>
+	 <div>
+		 <div class="block">
+            <h2><%= Subpage.contact.header %></h2>
+			<p><%= Subpage.contact.description %></p>
+		</div>
+		<div class="top">
+          <img src="/images/top.png" />
+        </div>
 	</div>
 	</div>
-    <div class="main">
-	<div class="content">
-		<%= yield -%>
+	<div id="content">
+		<div class="line">
+			<div class="sidebar">
+				<h4></h4>
+				<p></p>
+			</div>
+			<div class="list">
+				<%= yield -%>
+			</div>
+		</div>		
 	</div>
-    </div>
-	<div class="footer"><p></p></div>
-</div>
+	<div id="footer">
+		
+	</div>
 </body>
 </html>
