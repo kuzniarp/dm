@@ -5,8 +5,8 @@ class HomeController < ApplicationController
 		@meta_tag = @homepage.meta_tag
 		order = RAILS_ENV == 'production' ? "rand()" : "random()"
 		albums = Album.find(:all, :include => :photos, :conditions => "photos.album_id is not null", :order => order, :limit => 3)
-		@photos = albums.map{|a| a.photos[rand(a.photos.size)]}
-    @contact = Subpage.find(:first, :order => "page_order desc") || Subpage.new
+		#@photos = albums.map{|a| a.photos[rand(a.photos.size)]}
+    #@contact = Subpage.find(:first, :order => "page_order desc") || Subpage.new
 	end
 	
 	def show

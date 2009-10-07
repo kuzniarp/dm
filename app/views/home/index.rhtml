@@ -1,14 +1,4 @@
-<div style="width:160px;border-right:1px solid #301520;float:left;padding-right:10px;">
-  <%= @contact.description %>
-</div>
-<div style="width:360px;float:left;padding:0 10px;">
-<h1><%= @homepage.header -%></h1>
-<%= @homepage.description -%>
-</div>
-<div style="margin-left:549px;border-left:1px solid #301520;padding-left:10px;">
-<ul class="index_gallery">
-<% @photos.each do |photo| %>
-	<li style="padding:5px 0;"><%= link_to image_tag(photo.gallery_image_url, :size => "160x105"), show_page_url(:url_name => photo.album.gallery.url_name) -%></li>
-<% end %>
-</ul>
+<h1><%= @homepage.header %></h1>
+<div class="page">
+  <%= @homepage.description -%>
 </div>
