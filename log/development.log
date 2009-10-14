@@ -31955,3 +31955,24 @@ Rendering home/show
   [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order desc LIMIT 1[0m
   [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order desc LIMIT 1[0m
 Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00700 (11%) | DB: 0.00300 (4%) | 200 OK [http://localhost/producent3]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-10-07 23:53:36) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--e497e8c537a6bf85f641840cc5cd068046a0e1b8
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;35;1mSubpage Load (0.001000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mMetaTag Load (0.001000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE ("subpages"."page_order" = 0) LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "meta_tags" WHERE ("meta_tags".content_id = 2 AND "meta_tags".content_type = 'Subpage') LIMIT 1[0m
+  [4;35;1mAlbum Load IDs For Limited Eager Loading (0.001000)[0m   [0mSELECT DISTINCT "albums".id FROM "albums" LEFT OUTER JOIN "photos" ON photos.album_id = albums.id WHERE (photos.album_id is not null) ORDER BY random() LIMIT 3[0m
+Rendering template within layouts/application
+Rendering home/index
+  [4;36;1mSubpage Load (0.001000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order[0m
+  [4;35;1mSubpage Load (0.000000)[0m   [0mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order desc LIMIT 1[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM "subpages" WHERE (parent_id is null) ORDER BY page_order desc LIMIT 1[0m
+Completed in 0.07900 (12 reqs/sec) | Rendering: 0.00700 (8%) | DB: 0.00400 (5%) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.001000)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
