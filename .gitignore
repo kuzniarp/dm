@@ -1,3 +1,4 @@
 log/*
 nbproject/*
 public/system/*
+db/development.sqlite3
