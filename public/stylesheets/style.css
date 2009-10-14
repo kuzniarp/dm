@@ -25,8 +25,8 @@ background-repeat:repeat-x;
 body{
 width:980px;
 margin:0 auto;
-padding:15px 0 0 0;
 }
+#header{padding:0 20px;background:url(/images/dm_bg.png) repeat-y;}
 .logo{
 float:left;
 margin:0 21px 0 0
@@ -36,7 +36,7 @@ float:left;
 margin:35px 0 3px 0;
 width:655px;
 height:48px;
-background:url(/images/menu_bg.jpg) repeat-x;
+background:url(/images/menu_bg.png) repeat-x;
 }
 #menu li{
 list-style-type:none;
@@ -60,9 +60,9 @@ color:#000000;
 margin:0 13px;
 text-decoration:none
 }
-.top{height:335px;}
+.top{height:332px;}
 .block{
-background-image:url(/images/block_bg.jpg);
+background-image:url(/images/block_bg.png);
 background-position:top left;
 background-repeat:no-repeat;
 width:238px;
@@ -81,7 +81,8 @@ padding:0 0 20px 0;
 line-height:18px;
 }
 #content{
-padding:25px 0 0 0;
+padding:25px 20px 0 20px;
+background:url(/images/dm_bg.png) repeat-y;
 overflow:hidden;
 }
 .line{
@@ -185,17 +186,16 @@ padding:0 0 30px 0
 .border{
 border-right:1px solid #E8E5DE
 }
+#head{
+height:15px;
+background:url(/images/head_bg.png) no-repeat;
+}
 #footer{
-width:912px;
-float:left;
 background-color:#FFF;
-line-height:60px;
+line-height:50px;
 height:60px;
-padding:0 0 0 25px;
-font-family:Arial, Helvetica, sans-serif;
-font-size:13px;
-color:#73706A;
-background:#f5f5f5;
+padding:0 20px 10px 20px;
+background:url(/images/footer_bg.png) no-repeat;
 }
 #footer a{
 text-decoration:none;
