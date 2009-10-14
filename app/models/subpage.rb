@@ -6,6 +6,8 @@ class Subpage < ActiveRecord::Base
 
   acts_as_tree :order => "page_order"
 
+  named_scope :has_parent, :conditions => "parent_id is not null"
+
   def page_order_last?
     self.page_order+1 == Subpage.count
   end

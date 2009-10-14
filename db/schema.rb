@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090924215239) do
+ActiveRecord::Schema.define(:version => 20091014180650) do
 
   create_table "albums", :force => true do |t|
     t.string  "name"
@@ -36,13 +36,17 @@ ActiveRecord::Schema.define(:version => 20090924215239) do
   end
 
   create_table "subpages", :force => true do |t|
-    t.string  "name"
-    t.string  "header"
-    t.text    "description"
-    t.string  "url_name"
-    t.string  "type"
-    t.integer "page_order"
-    t.integer "parent_id"
+    t.string   "name"
+    t.string   "header"
+    t.text     "description"
+    t.string   "url_name"
+    t.string   "type"
+    t.integer  "page_order"
+    t.integer  "parent_id"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
 end
