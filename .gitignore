@@ -1,1 +1,6 @@
+<<<<<<< HEAD:.gitignore
 log/*
+=======
+log/*
+nbproject
+>>>>>>> 7a538db80754d3ec6855571168355c7456ca4f13:.gitignore
