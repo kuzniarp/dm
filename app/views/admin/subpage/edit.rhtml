@@ -1,4 +1,4 @@
-<% form_tag :controller => 'subpage', :action => 'edit' do %>
+<% form_tag({:controller => 'subpage', :action => 'edit'}, {:multipart => true}) do %>
     <label>Nazwa:</label><br />
 	<%= text_field 'subpage', 'name' %><br />
     <label>Nagłówek:</label><br />
