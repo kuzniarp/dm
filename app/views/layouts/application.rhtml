@@ -41,7 +41,7 @@
 		<div class="line">
 			<div class="sidebar">
               <ul>
-				<% Subpage.has_parent.each do |page|  %>
+				<% Subpage.all(:include => :parent).select{|p| p.parent and p.parent.url_name == 'oferta'}.each do |page|  # FIX %>
                   <li><%= link_to image_tag(page.logo.url(:thumb)), show_page_url(:url_name => page.url_name) %></li>
                 <% end %>
               </ul>
