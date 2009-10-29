@@ -20,6 +20,8 @@
 				<li class="album" id="page_<%= page.id -%>">
 					<%= image_tag "/images/sort_btn.png", :style => "cursor:pointer;" -%> <%= link_to page.name, :controller => 'subpage', :action => 'edit', :id => page.id %>
 					<%= link_to(image_tag("/images/delete_btn.png"), {:controller => 'subpage', :action => 'delete', :id => page.id}, :confirm => "Jesteś pewien, że chcesz usunąć stronę?") %>
+                    <%= list_pages(page.children) unless page.children.empty? %>
+                   	<%= link_to "Nowa podstrona", {:controller => 'subpage', :action => 'edit', :parent_id => page.id} %>
 				</li>
 			<% end %>
 			</ul>
