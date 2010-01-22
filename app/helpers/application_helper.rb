@@ -2,7 +2,7 @@
 module ApplicationHelper
   def list_pages(pages)
     html = ''
-    html += '<ul id="subpage_list_' + pages.first.parent_id.to_s + '"'
+    html += '<ul id="subpage_list_' + pages.first.parent_id.to_s + '">'
     pages.each do |page|
       html += '<li class="subpage" id="subpage_' + page.id.to_s + '"><div>'
       html += link_to page.name, {:controller => 'subpage', :action => 'edit', :id => page.id}, :class => "label"

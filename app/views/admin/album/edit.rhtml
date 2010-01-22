@@ -1,5 +1,6 @@
 <div class="album">
 <% form_tag :controller => 'album', :action => 'edit' do %>
+  <fieldset><legend>Edycja albumu</legend>
     <label>Nazwa:</label><br />
 	<%= text_field 'album', 'name' %><br />
     <label>Opis:</label><br />
@@ -8,6 +9,7 @@
 	<%= select 'album', 'gallery_id', Gallery.find(:all).map{|g| [g.name, g.id]} %><br />
 	<%= hidden_field 'album', 'id' -%>
 	<%= submit_tag 'Zapisz' %>
+  </fieldset>
 <% end %>
 	<h3>Meta tagi</h3>
 	<label>Tytuł:</label><br />

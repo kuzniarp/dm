@@ -1,4 +1,5 @@
 <% form_tag({:controller => 'subpage', :action => 'edit'}, {:multipart => true}) do %>
+  <fieldset><legend>Edycja strony</legend>
     <label>Nazwa:</label><br />
 	<%= text_field 'subpage', 'name' %><br />
     <label>Nagłówek:</label><br />
@@ -17,6 +18,7 @@
 	<%= hidden_field 'subpage', 'id' -%>
     <%= hidden_field 'subpage', 'parent_id', {:value => params[:parent_id]} -%>
 	<%= submit_tag 'Zapisz' %>
+  </fieldset>
 <% end %>
 <h3>Meta tagi</h3><br />
 <label>Tytuł:</label><br />
