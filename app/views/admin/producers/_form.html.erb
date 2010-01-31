@@ -1,0 +1,9 @@
+<fieldset><legend>Producent</legend>
+  <%= f.label :name, "Nazwa" %><br />
+  <%= f.text_field :name %><br />
+  <%= f.label :description, "Opis" %><br />
+  <%= f.text_area :description %><br />
+  <%= f.label :subpage_id, "Przypisz do strony ..." %><br />
+  <%= f.select :subpage_id, Subpage.all.map{|p| [p.name, p.id]} %><br />
+  <%= f.submit "Zapisz" %>
+</fieldset>

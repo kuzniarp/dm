@@ -1,0 +1,14 @@
+<fieldset><legend>Produkt</legend>
+  <%= f.label :name, "Nazwa" %><br />
+  <%= f.text_field :name %><br />
+  <%= f.label :description, "Opis" %><br />
+  <%= f.text_area :description %><br />
+  <%= f.label :producer_id, "Producent" %><br />
+  <%= f.select :producer_id, Producer.all.map{|p| [p.name, p.id]} %><br />
+  <%= f.label :category_id, "Kategoria" %><br />
+  <%= f.select :category_id, Category.all.map{|p| [p.name, p.id]} %><br />
+  <%= f.label :image, "Zdjęcie"  %><br />
+  <%= image_tag @item.image.url(:thumb) if @item.image %>
+  <%= f.file_field :image %><br />
+  <%= f.submit "Zapisz" %>
+</fieldset>

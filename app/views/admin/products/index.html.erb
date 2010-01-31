@@ -1,0 +1,23 @@
+<h1>Produkty</h1>
+<%= link_to "Dodaj produkt", new_admin_product_path %>
+<table id="list">
+  <tr>
+    <th>Nazwa</th>
+    <th>Zdjęcie</th>
+    <th>Producent</th>
+    <th>Kategoria</th>
+    <th colspan="2">&nbsp</th>
+  </tr>
+  <tbody>
+  <% for item in @items %>
+  <tr class="<%= cycle("odd","even") %>">
+    <td><%= link_to item.name, edit_admin_product_path(item) %></td>
+    <td><%= image_tag item.image.url(:thumb) if item.image %></td>
+    <td><%= item.producer.name if item.producer %></td>
+    <td><%= item.category.name if item.category %></td>
+    <td><%= link_to "Edytuj", edit_admin_product_path(item) %></td>
+    <td><%= link_to "Usuń", admin_product_path(item), :method => :delete, :confirm => "Na pewno chcesz usunąć?" %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

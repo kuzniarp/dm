@@ -33,6 +33,12 @@
 <% end %>
 </ul>
 
+<ul>
+  <li><%= link_to 'Producenci', admin_producers_path %></li>
+  <li><%= link_to 'Kategorie produktów', admin_categories_path %></li>
+  <li><%= link_to 'Produkty', admin_products_path %></li>
+</ul>
+
 <%= sortable_element 'subpage_list_',
       :complete => visual_effect(:highlight, 'list'),
       :url => { :controller => "subpage", :action => "order" } %>

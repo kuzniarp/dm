@@ -1,0 +1,4 @@
+<h2>Nowa Kategoria</h2>
+<% form_for [:admin, @item] do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end %>

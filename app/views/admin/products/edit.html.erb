@@ -1,0 +1,4 @@
+<h2>Edycja Produktu</h2>
+<% form_for [:admin, @item], :html => { :multipart => true } do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end %>

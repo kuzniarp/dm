@@ -1,0 +1,19 @@
+<h1>Producenci</h1>
+<%= link_to "Dodaj producenta", new_admin_producer_path %>
+<table id="list">
+  <tr>
+    <th>Nazwa</th>
+    <th>Przypisany do strony</th>
+    <th colspan="2">&nbsp</th>
+  </tr>
+  <tbody>
+  <% for item in @items %>
+  <tr class="<%= cycle("odd","even") %>">
+    <td><%= link_to item.name, edit_admin_producer_path(item) %></td>
+    <td><%= item.subpage.name if item.subpage %></td>
+    <td><%= link_to "Edytuj", edit_admin_producer_path(item) %></td>
+    <td><%= link_to "Usuń", admin_producer_path(item), :method => :delete, :confirm => "Na pewno chcesz usunąć?" %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

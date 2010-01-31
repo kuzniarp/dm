@@ -1,6 +1,7 @@
 class Subpage < ActiveRecord::Base
 	include ActionView::Helpers::SanitizeHelper
 	has_one :meta_tag, :as => :content
+  has_many :producers
 	before_save :update_url_name, :update_header
   has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
