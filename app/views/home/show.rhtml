@@ -15,4 +15,11 @@
   <% end %>
   </ul>
 <% end %>
+<% unless @page.producers.empty? %>
+  <ul>
+  <% @page.producers.each do |producer| %>
+    <li><%= link_to "Pokaż produkty tego producenta", producer_path(producer) %></li>
+  <% end %>
+  </ul>
+<% end %>
 </div>

@@ -1,0 +1,14 @@
+<%= javascript_include_tag "prototype" %>
+<h1><%= @item.name %></h1>
+<% form_tag producer_path(@item, :with => "this.form.serialize();"), :method => :get do %>
+  <%= select_tag :category, options_for_select([["Wszystkie",nil]]+Category.all.map{|c| [c.name, c.id]},params[:category].to_i), {:onchange => "this.form.submit();"} %>
+<% end %>
+<table class="list">
+  <% for product in @item.products %>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= image_tag product.image.url(:thumb) if product.image %></td>
+    <td><%= link_to "Zapytaj o cenę", contact_form_path(:product => product.name) %></td>
+  </tr>
+  <% end %>
+</table>

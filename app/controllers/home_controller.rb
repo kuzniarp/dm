@@ -10,8 +10,17 @@ class HomeController < ApplicationController
 	end
 	
 	def show
-		@page = Subpage.find_by_url_name(params[:url_name])
+		@page = Subpage.find(:first, :conditions => ["url_name = ?",params[:url_name]], :include => [:children, :producers])
 		@meta_tag = @page.meta_tag if @page
     render :action => 'show_gallery' if @page.is_a?(Gallery)
 	end
+
+  def send_contact_form
+    if Mailer.deliver_contact_form(params[:sender], params[:title], params[:message])
+      flash[:info] = "Wiadomość została wysłana."
+    else
+      flash[:info] = "Nie udało się wysłać wiadomości."
+    end
+    redirect_to contact_form_path
+  end
 end

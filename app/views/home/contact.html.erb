@@ -1,0 +1,10 @@
+<% form_tag send_contact_form_path do %>
+  <%= label_tag :sender, "Twój email" %><br />
+  <%= text_field_tag :sender, nil, {:size => 50, :class => "jsrequired jsvalidate_email", :alt => "Podaj poprawny adres email"} %><br /><br />
+  <%= label_tag :title, "Temat" %><br />
+  <%= text_field_tag :title, "Pytanie o cenę #{params[:product]}", {:size => 60, :class => "jsrequired jsvalidate_alpha", :alt => "Pole wymagane"} %><br /><br />
+  <%= label_tag :message, "Wiadomość" %><br />
+  <%= text_area_tag :message, nil, {:cols => 60, :rows => 7} %><br /><br />
+  <%= submit_tag "Wyślij" %>
+  <%= flash[:info] %>
+<% end %>

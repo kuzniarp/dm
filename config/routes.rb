@@ -32,6 +32,10 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :categories
   end
 
+  map.resources :producers
+  map.resources :products
+  map.contact_form "/formularz_kontaktowy", :controller => "home", :action => "contact"
+  map.send_contact_form "/send_contact_form", :controller => "home", :action => "send_contact_form"
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   # map.root :controller => "welcome"
 
