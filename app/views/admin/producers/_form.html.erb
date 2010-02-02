@@ -2,7 +2,11 @@
   <%= f.label :name, "Nazwa" %><br />
   <%= f.text_field :name %><br />
   <%= f.label :description, "Opis" %><br />
-  <%= f.text_area :description %><br />
+  <% @producer = @item %>
+  <%= fckeditor_textarea(:producer, :description, :toolbarSet => 'Simple', :width => '650px', :height => '250px') %><br />
+  <%= f.label :image, "Logo"  %><br />
+  <%= image_tag @item.image.url(:thumb) if @item.image %>
+  <%= f.file_field :image %><br />
   <%= f.label :subpage_id, "Przypisz do strony ..." %><br />
   <%= f.select :subpage_id, Subpage.all.map{|p| [p.name, p.id]} %><br />
   <%= f.submit "Zapisz" %>

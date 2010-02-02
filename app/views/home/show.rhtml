@@ -18,7 +18,7 @@
 <% unless @page.producers.empty? %>
   <ul>
   <% @page.producers.each do |producer| %>
-    <li><%= link_to "Wszystkie produkty #{producer.name}", producer_path(producer) %></li>
+    <li><%= link_to producer.name, producer_path(producer) %></li>
   <% end %>
   </ul>
 <% end %>
