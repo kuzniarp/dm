@@ -24,15 +24,15 @@ body{background:#C8C8C8 url(/images/body_bg.png) repeat-x;}
 #header #menu a{color:#d8d8d8;}
 #header #menu a:hover{color:#d8ffff;}
 #header #menu li{float:left;margin:0 20px;}
-#main{background:url(/images/main_bg.png) repeat-y;width:880px;height:auto;min-height:200px;padding:0 20px;line-height:1.3em;}
-h1,h2{background:#e8e8f8;padding:2px 3px;}
+#main{background:url(/images/main_bg.png) repeat-y;width:880px;height:auto;min-height:200px;padding:0 20px;line-height:1.6em;}
+h1,h2{background:#e8e8f8;padding:2px 3px;font-size:14px;}
 #main #sidebar {width:220px;margin-right:10px;float:left;}
 #main #sidebar block{border:1px solid #ddf;}
 #main #sidebar ul{text-align:center;margin-top:10px;}
 #main #sidebar li{margin:5px;}
 #main #sidebar img{padding:5px;border:1px solid #ddf;}
 #main #content {width:650px;overflow:hidden;float:left;}
-#main .page {margin:4px 0;color:#66a;font-size:12px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
+#main .page {margin:4px 0;color:#66a;font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main #sidebar p{margin:2px 0 4px;}
 #main #content p{margin:2px 0 4px;}
 #footer{background:url(/images/footer_bg.png) no-repeat;width:880px;height:60px;padding:0 20px 20px 20px;}
