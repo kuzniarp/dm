@@ -1,6 +1,6 @@
 <%= javascript_include_tag "prototype" %>
 <% form_tag producer_path(@producer, :with => "this.form.serialize();"), :method => :get do %>
-  <%= select_tag :category_id, options_for_select([["Wszystkie",nil]]+@producer.categories.map{|c| [c.name, c.id]},params[:category].to_i), {:onchange => "this.form.submit();"} %>
+  <%= select_tag :category_id, options_for_select([["Wszystkie",nil]]+@producer.categories.map{|c| [c.name, c.id]},params[:category_id].to_i), {:onchange => "this.form.submit();"} %>
 <% end %>
 <table class="list">
   <% for product in products %>
