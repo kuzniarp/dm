@@ -1,13 +1,17 @@
 class ProducersController < ApplicationController
   def show
-    conditions_string = ["producers.permalink = ?"]
-    conditions_array = [params[:id]]
-    unless params[:category].blank?
+    @producer = Producer.find(:first, :conditions => ["permalink = ?", params[:id]], :include => {:products => :category})
+    conditions_string = []
+    conditions_array = []
+    unless params[:category_id].blank?
       conditions_string << "categories.id = ?"
-      conditions_array << params[:category]
+      conditions_array << params[:category_id]
     end
     conditions = ([conditions_string.join(' AND ')] + conditions_array)
-    @item = Producer.find(:first, :conditions => conditions, :include => {:products => :category})
-    redirect_to root_path unless @item
+    @products = @producer.products.all(:conditions => conditions, :include => [:producer, :category])
+  end
+
+  def set_meta_tag
+    @meta_tag = MetaTag.new(:title => params[:id])
   end
 end

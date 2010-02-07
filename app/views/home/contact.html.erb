@@ -1,10 +1,17 @@
+<%= javascript_include_tag "livevalidation" %>
+<h1>Formularz kontaktowy</h1>
 <% form_tag send_contact_form_path do %>
   <%= label_tag :sender, "Twój email" %><br />
-  <%= text_field_tag :sender, nil, {:size => 50, :class => "jsrequired jsvalidate_email", :alt => "Podaj poprawny adres email"} %><br /><br />
+  <%= text_field_tag :sender, nil, :size => 50 %><br />
   <%= label_tag :title, "Temat" %><br />
-  <%= text_field_tag :title, "Pytanie o cenę #{params[:product]}", {:size => 60, :class => "jsrequired jsvalidate_alpha", :alt => "Pole wymagane"} %><br /><br />
+  <%= text_field_tag :title, "Pytanie o cenę #{params[:product]}", :size => 60 %><br />
   <%= label_tag :message, "Wiadomość" %><br />
-  <%= text_area_tag :message, nil, {:cols => 60, :rows => 7} %><br /><br />
+  <%= text_area_tag :message, nil, {:cols => 60, :rows => 7} %><br />
   <%= submit_tag "Wyślij" %>
   <%= flash[:info] %>
 <% end %>
+<script>
+  new LiveValidation('sender', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."}).add(Validate.Email, {failureMessage: "Podaj poprawny adres email."});
+  new LiveValidation('title', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."});
+  new LiveValidation('message', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."});
+</script>

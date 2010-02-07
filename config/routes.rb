@@ -22,8 +22,7 @@ ActionController::Routing::Routes.draw do |map|
   #   map.resources :products do |products|
   #     products.resources :comments
   #     products.resources :sales, :collection => { :recent => :get }
-  #   end
-
+  #   end  
   # Sample resource route within a namespace:
   map.namespace :admin do |admin|
   # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
@@ -32,6 +31,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :categories
   end
 
+  #map.resources :products, :has_one => :category, :has_one => :producer    
   map.resources :producers
   map.resources :products
   map.contact_form "/formularz_kontaktowy", :controller => "home", :action => "contact"

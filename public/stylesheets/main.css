@@ -15,6 +15,8 @@ h1,h2,h3,h4,h5,h6{font-size:1em;font-weight:bold}
 
 /* fonts */
 body,input,textarea,select,td{color:#66a;font-size:12px;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;background:#eee;}
+form{margin:5px 0;}
+input,textarea{border:1px solid #AAC;padding:2px;margin:2px 0 10px 0;}
 body{background:#C8C8C8 url(/images/body_bg.png) repeat-x;}
 #wrapper{width:920px;height:auto;margin:0 auto;position:relative;}
 #header{background:url(/images/header_bg.png) no-repeat;width:880px;height:200px;padding:20px 20px 10px 20px;}
@@ -38,3 +40,5 @@ h1,h2{background:#e8e8f8;padding:2px 3px;}
 table.list {width:100%;}
 table.list td {margin:5px; padding:3px;}
 
+.LV_validation_message {margin:0 0 0 10px;}
+.LV_invalid {color:#f00;}
