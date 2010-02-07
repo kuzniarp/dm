@@ -3,4 +3,4 @@
 <div class="page">
   <%= @producer.description %>
 </div>
-<%= render :partial => "products/products", :locals => {:products => @products || @producer.products} %>
+<%= render :partial => "products/products", :locals => {:products => @products} unless @products.empty? %>
