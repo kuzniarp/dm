@@ -36,7 +36,7 @@ h1,h2{background:#e8e8f8;padding:2px 3px;font-size:14px;}
 #main #sidebar p{margin:2px 0 4px;}
 #main #content p{margin:2px 0 4px;}
 #footer{background:url(/images/footer_bg.png) no-repeat;width:880px;height:60px;padding:0 20px 20px 20px;}
-
+.right {float:right;}
 table.list {width:100%;}
 table.list td {margin:5px; padding:3px;}
 

@@ -14,17 +14,17 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def edit
-    @item = Category.find_by_permalink(params[:id])
+    @item = Category.find_by_id(params[:id])
   end
 
   def update
-    @item = Category.find_by_permalink(params[:id])
+    @item = Category.find_by_id(params[:id])
     @item.update_attributes(params[:category])
     redirect_to admin_categories_path
   end
 
   def destroy
-    @item = Category.find_by_permalink(params[:id])
+    @item = Category.find_by_id(params[:id])
     @item.destroy
     redirect_to admin_categories_path
   end
