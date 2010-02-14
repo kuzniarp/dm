@@ -23,4 +23,18 @@ xml.urlset "xmlns" => "http://www.sitemaps.org/schemas/sitemap/0.9" do
 			end
 		end
 	end
+  @producers.each do |producer|
+		xml.url do
+			xml.loc producer_path(producer)
+			xml.changefreq("daily")
+			xml.priority("1.0")
+		end
+  end
+  @products.each do |product|
+		xml.url do
+			xml.loc product_path(product)
+			xml.changefreq("daily")
+			xml.priority("1.0")
+		end
+  end
 end
