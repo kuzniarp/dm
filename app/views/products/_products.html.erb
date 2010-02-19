@@ -6,7 +6,7 @@
   <% for product in products %>
   <tr>
     <td><%= link_to product.name, product_path(product) %></td>
-    <td><%= image_tag product.image.url(:thumb) if product.image %></td>
+    <td><%= link_to image_tag(product.image.url(:thumb)), product_path(product) if product.image %></td>
     <td><%= link_to "Zapytaj o cenę", contact_form_path(:product => product.name) %></td>
   </tr>
   <% end %>
