@@ -1,7 +1,10 @@
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  timeout: 5000
+  adapter: mysql
+  database: dobre-maszyny_development
+  username: railsuser
+  password: railspass
+  host: localhost
+  socket: /var/run/mysqld/mysqld.sock
   
 test:
   adapter: sqlite3

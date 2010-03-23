@@ -1,6 +1,5 @@
 class Subpage < ActiveRecord::Base
-	include ActionView::Helpers::SanitizeHelper
-	has_one :meta_tag, :as => :content
+  has_one :meta_tag, :as => :content
   has_many :producers
 	before_save :update_url_name, :update_header
   has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
@@ -14,7 +13,7 @@ class Subpage < ActiveRecord::Base
   end
 
   def self.contact
-    Subpage.find(:first, :conditions => "parent_id is null", :order => "page_order desc")
+    Subpage.find(:first, :conditions => "parent_id is null", :order => "page_order desc") || Subpage.new
   end
 	
 	def update_url_name
@@ -36,6 +35,6 @@ class Subpage < ActiveRecord::Base
 	end
 	
 	def get_default_meta_tag_description
-		strip_tags(self.description.to_s)[/[A-Z|0-9].+?(\.|\!|\?)/]
+		ActionController::Base.helpers.strip_tags(self.description.to_s)[/[A-Z|0-9].+?(\.|\!|\?)/]
 	end
 end
