@@ -3,7 +3,7 @@
   <%= f.text_field :name %><br />
   <%= f.label :description, "Opis" %><br />
   <% @product = @item %>
-  <%= fckeditor_textarea(:product, :description, :toolbarSet => 'Simple', :width => '650px', :height => '250px') %><br />
+  <%= ckeditor_textarea(:product, :description, :width => '100%', :height => '250px', :language => 'pl') %><br />
   <%= f.label :producer_id, "Producent" %><br />
   <%= f.select :producer_id, Producer.all.map{|p| [p.name, p.id]} %><br />
   <%= f.label :category_id, "Kategoria" %><br />
@@ -13,3 +13,4 @@
   <%= f.file_field :image %><br />
   <%= f.submit "Zapisz" %>
 </fieldset>
+
