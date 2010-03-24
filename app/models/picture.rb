@@ -18,7 +18,11 @@ class Picture < Asset
   has_attached_file :data,
                     :url  => "/uploads/assets/pictures/:id/:style_:basename.:extension",
                     :path => ":rails_root/public/uploads/assets/pictures/:id/:style_:basename.:extension",
-	                  :styles => { :content => '575>', :thumb => '100x100' }
+                    :processors => [:watermark],
+                    :styles => { :thumb => '100x100', 
+                                 :content => { :geometry => "575>", 
+                                                :watermark_path => "#{RAILS_ROOT}/public/images/watermark.png",
+                                                :position => "Center" }}
 	
 	validates_attachment_size :data, :less_than=>2.megabytes
 	
