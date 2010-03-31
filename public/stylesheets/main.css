@@ -39,7 +39,7 @@ h1,h2{background:#e8e8f8;padding:2px 3px;font-size:14px;}
 #footer{background:url(/images/footer_bg.png) no-repeat;width:880px;height:60px;padding:0 20px 20px 20px;}
 .right {float:right;}
 table.list {width:100%;}
-table.list td {margin:5px; padding:3px;}
+table.list td {margin:5px; padding:5px;background-color:#eee;border-bottom:1px solid #ddd;}
 
 .LV_validation_message {margin:0 0 0 10px;}
 .LV_invalid {color:#f00;}
