@@ -1,5 +1,5 @@
 class Mailer < ActionMailer::Base
-  RECIPIENTS = ["bogdan@dobre-maszyny.eu","marcin@dobre-maszyny.eu","kuzniarp@gmail.com"]
+  RECIPIENTS = ["bogdan@dobre-maszyny.eu","marcin@dobre-maszyny.eu"]
 
   def contact_form(sender, title, message)
     subject    "#{title} (formularz na stronie)"
