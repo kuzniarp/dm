@@ -20,7 +20,7 @@ input,textarea{border:1px solid #AAC;padding:2px;margin:2px 0 10px 0;}
 body{background:#C8C8C8 url(/images/body_bg.png) repeat-x;}
 #wrapper{width:920px;height:auto;margin:0 auto;position:relative;}
 #header{background:url(/images/header_bg.png) no-repeat;width:880px;height:200px;padding:20px 20px 10px 20px;}
-#header #menu {position:relative;top:177px;padding:0 10px;font-size:16px;}
+#header #menu {position:relative;top:50px;padding:0 10px;font-size:16px;}
 #header #menu a{color:#d8d8d8;text-decoration:none;}
 #header #menu a:hover{color:#d8ffff;}
 #header #menu li{float:left;margin:0 20px;}
