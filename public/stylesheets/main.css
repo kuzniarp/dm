@@ -31,6 +31,11 @@ h1,h2{background:#e8e8f8;padding:2px 3px;font-size:14px;}
 #main #sidebar ul{text-align:center;margin-top:10px;}
 #main #sidebar li{margin:5px;}
 #main #sidebar img{padding:5px;border:1px solid #ddf;}
+
+#main ul.icons{text-align:center;}
+#main .icons li{margin:5px;}
+#main .icons img{padding:5px;border:1px solid #ddf;}
+
 #main #content {width:650px;overflow:hidden;float:left;}
 #main .page {margin:4px 0;color:#66a;font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main .page p{font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}

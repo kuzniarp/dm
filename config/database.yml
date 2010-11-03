@@ -1,10 +1,11 @@
 development:
   adapter: mysql
-  database: dobre-maszyny_development
+  database: dobremaszyny_development
   username: railsuser
   password: railspass
   host: localhost
-  socket: /var/run/mysqld/mysqld.sock
+  socket: /tmp/mysql.sock
+  #/var/run/mysqld/mysqld.sock
   
 test:
   adapter: sqlite3
