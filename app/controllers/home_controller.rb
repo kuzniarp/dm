@@ -21,6 +21,6 @@ class HomeController < ApplicationController
     else
       flash[:info] = "Nie udało się wysłać wiadomości."
     end
-    redirect_to contact_form_path
+    redirect_to contact_form_path(:product => params[:product])
   end
 end

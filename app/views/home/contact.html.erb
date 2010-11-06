@@ -18,7 +18,7 @@
                         :help_btn => "Pomoc",
                         :incorrect_try_again => "Tekst nieprawidłowy. spróbuj ponownie.",
                 }}) %>
-
+  <%= hidden_field_tag :product, params[:product] %>
   <%= submit_tag "Wyślij" %>
   <%= flash[:info] %>
 <% end %>
