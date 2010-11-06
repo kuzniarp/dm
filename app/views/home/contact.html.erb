@@ -6,7 +6,19 @@
   <%= label_tag :title, "Temat" %><br />
   <%= text_field_tag :title, "Pytanie o cenę #{params[:product]}", :size => 60 %><br />
   <%= label_tag :message, "Wiadomość" %><br />
-  <%= text_area_tag :message, nil, {:cols => 60, :rows => 7} %><br />
+  <%= text_area_tag :message, nil, {:cols => 60, :rows => 7} %><br /
+  <%= recaptcha_tags(:display => {:lang => 'pl', :theme => 'white', :custom_translations => {
+                        :instructions_visual => "Wpisz powyższe słowa:",
+                        :instructions_audio => "Wpisz usłyszane cyfry:",
+                        :play_again => "Odtwórz ponownie",
+                        :cant_hear_this => "Pobierz utwór w formacie MP3",
+                        :visual_challenge => "Tryb wizualny",
+                        :audio_challenge => "Tryb audio",
+                        :refresh_btn => "Pobierz nowe słowa",
+                        :help_btn => "Pomoc",
+                        :incorrect_try_again => "Tekst nieprawidłowy. spróbuj ponownie.",
+                }}) %>
+
   <%= submit_tag "Wyślij" %>
   <%= flash[:info] %>
 <% end %>

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 class HomeController < ApplicationController
 
 	def index
@@ -17,7 +16,7 @@ class HomeController < ApplicationController
 	end
 
   def send_contact_form
-    if Mailer.deliver_contact_form(params[:sender], params[:title], params[:message])
+    if verify_recaptcha && Mailer.deliver_contact_form(params[:sender], params[:title], params[:message])
       flash[:info] = "Wiadomość została wysłana."
     else
       flash[:info] = "Nie udało się wysłać wiadomości."

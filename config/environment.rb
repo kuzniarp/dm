@@ -4,6 +4,9 @@
 # you don't control web/app server and can't set it the proper way
 # ENV['RAILS_ENV'] ||= 'production'
 
+ENV['RECAPTCHA_PUBLIC_KEY']  = '6Lddgr4SAAAAAOdzPv10BQaJ-iWLMkVRBDryfHeD'
+ENV['RECAPTCHA_PRIVATE_KEY'] = '6Lddgr4SAAAAAHFkg0T9yN4OqjxJcEAdLGAl5RHR'
+
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
@@ -27,6 +30,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
 
   config.gem "rmagick", :lib => "RMagick2"
+  config.gem "ambethia-recaptcha", :lib => "recaptcha/rails", :source => "http://gems.github.com"
 
   # Only load the plugins named here, in the order given. By default, all plugins 
   # in vendor/plugins are loaded in alphabetical order.
