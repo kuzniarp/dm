@@ -2,11 +2,11 @@
 <h1>Formularz kontaktowy</h1>
 <% form_tag send_contact_form_path do %>
   <%= label_tag :sender, "Twój email" %><br />
-  <%= text_field_tag :sender, nil, :size => 50 %><br />
+  <%= text_field_tag :sender, params[:sender], :size => 50 %><br />
   <%= label_tag :title, "Temat" %><br />
-  <%= text_field_tag :title, "Pytanie o cenę #{params[:product]}", :size => 60 %><br />
+  <%= text_field_tag :title, params[:title].present? ? params[:title] : "Pytanie o cenę #{params[:product]}", :size => 60 %><br />
   <%= label_tag :message, "Wiadomość" %><br />
-  <%= text_area_tag :message, nil, {:cols => 60, :rows => 7} %><br /
+  <%= text_area_tag :message, params[:message], {:cols => 60, :rows => 7} %><br /
   <%= recaptcha_tags(:display => {:lang => 'pl', :theme => 'white', :custom_translations => {
                         :instructions_visual => "Wpisz powyższe słowa:",
                         :instructions_audio => "Wpisz usłyszane cyfry:",
@@ -18,7 +18,6 @@
                         :help_btn => "Pomoc",
                         :incorrect_try_again => "Tekst nieprawidłowy. spróbuj ponownie.",
                 }}) %>
-  <%= hidden_field_tag :product, params[:product] %>
   <%= submit_tag "Wyślij" %>
   <%= flash[:info] %>
 <% end %>

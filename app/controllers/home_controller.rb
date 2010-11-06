@@ -17,10 +17,10 @@ class HomeController < ApplicationController
 
   def send_contact_form
     if verify_recaptcha && Mailer.deliver_contact_form(params[:sender], params[:title], params[:message])
-      flash[:info] = "Wiadomość została wysłana."
+      flash[:info] = "<span style=\"font-size:16px;\">Wiadomość została wysłana.</span>"
     else
-      flash[:info] = "Nie udało się wysłać wiadomości."
+      flash[:info] = "<span style=\"font-size:16px;color:red;font-weight:bold;\">Nie udało się wysłać wiadomości.<span>"
     end
-    redirect_to contact_form_path(:product => params[:product])
+    render :action => 'contact'
   end
 end
