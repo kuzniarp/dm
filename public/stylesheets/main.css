@@ -35,8 +35,9 @@ h1,h2{background:#e8e8f8;padding:2px 3px;font-size:14px;}
 #main ul.icons{text-align:center;}
 #main .icons li{margin:5px;}
 #main .icons img{padding:5px;border:1px solid #ddf;}
+#main hr{opacity:0.5;}
 
-#main #content {width:650px;overflow:hidden;float:left;}
+#main #content {width:840px;overflow:hidden;float:left;padding:0 20px;}
 #main .page {margin:4px 0;color:#66a;font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main .page p{font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main #sidebar p{margin:2px 0 4px;}

@@ -37,16 +37,11 @@
           <% end %>
         </ul>
         <div class="clear"></div>
-      <div id="sidebar">
-        <div class="block">
-          <h2><%= Subpage.contact.header %></h2>
-          <div class="page"><%= Subpage.contact.description %></div>
-        </div>
-      </div>
-	  <div id="content">
+	<hr />
+	<div id="content">
         <%= yield -%>
-      </div>
-      <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
 	</div>		
 	<div id="footer"></div>
   </div>
