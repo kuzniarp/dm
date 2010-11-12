@@ -31,11 +31,13 @@
         <div class="clear"></div>
     </div>
 	<div id="main">
-        <ul class="icons">
+        <table class="icons">
+	  <tr>
           <% Producer.all.each do |producer| %>
-          <li style="float:left;"><%= link_to image_tag(producer.image.url(:thumb)), producer_path(producer) %></li>
+          <td><%= link_to image_tag(producer.image.url(:thumb)), producer_path(producer) %></td>
           <% end %>
-        </ul>
+	  </tr>
+        </table>
         <div class="clear"></div>
 	<hr />
 	<div id="content">
