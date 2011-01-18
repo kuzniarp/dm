@@ -44,14 +44,16 @@
         <div class="clear"></div>
     </div>
 	<div id="main">
-        <table class="icons">
-	  <tr>
-          <% Producer.all.each do |producer| %>
-          <td><%= link_to image_tag(producer.image.url(:thumb)), producer_path(producer) %></td>
-          <% end %>
-	  </tr>
-        </table>
-        <div class="clear"></div>
+    <table class="icons">
+	    <tr>
+        <% icon_width = (840/(Producer.count).to_f - 20).round %>
+        <% icon_width = 100 if icon_width > 100 %>
+        <% Producer.all.each do |producer| %>
+          <td><%= link_to image_tag(producer.image.url(:thumb), :style => "width:#{icon_width}px;"), producer_path(producer) %></td>
+        <% end %>
+	    </tr>
+    </table>
+    <div class="clear"></div>
 	<hr />
 	<div id="content">
         <%= yield -%>
