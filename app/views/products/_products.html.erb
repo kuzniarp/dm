@@ -7,7 +7,10 @@
   <tr>
     <td><%= link_to product.name, product_path(product) %></td>
     <td><%= link_to image_tag(product.image.url(:thumb)), product_path(product) if product.image %></td>
-    <td><%= link_to "Zapytaj o cenę", contact_form_path(:product => product.name) %></td>
+    <td>
+      <%= link_to "Zapytaj o cenę", contact_form_path(:product => product.name) %><br />
+      <%= link_to "Zapytaj o części", contact_form_path(:title => "Pytanie o części do #{product.name}") %>
+    </td>
   </tr>
   <% end %>
 </table>

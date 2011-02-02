@@ -26,6 +26,7 @@ body{background:#C8C8C8 url(/images/body_bg.png) repeat-x;}
 #header #menu li{float:left;margin:0 20px;}
 #main{background:url(/images/main_bg.png) repeat-y;width:880px;height:auto;min-height:200px;padding:0 20px;line-height:1.6em;}
 h1,h2{background:#e8e8f8;padding:2px 3px;font-size:14px;}
+h1 span{font-weight:normal;font-size:12px;}
 #main #sidebar {width:220px;margin-right:10px;float:left;}
 #main #sidebar block{border:1px solid #ddf;}
 #main #sidebar ul{text-align:center;margin-top:10px;}

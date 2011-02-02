@@ -3,6 +3,8 @@
 <% form_tag send_contact_form_path do %>
   <%= label_tag :sender, "Twój email" %><br />
   <%= text_field_tag :sender, params[:sender], :size => 50 %><br />
+  <%= label_tag :phone, "Numer telefonu" %><br />
+  <%= text_field_tag :phone, params[:phone], :size => 50 %><br />
   <%= label_tag :title, "Temat" %><br />
   <%= text_field_tag :title, params[:title].present? ? params[:title] : "Pytanie o cenę #{params[:product]}", :size => 60 %><br />
   <%= label_tag :message, "Wiadomość" %><br />
@@ -16,7 +18,7 @@
                         :audio_challenge => "Tryb audio",
                         :refresh_btn => "Pobierz nowe słowa",
                         :help_btn => "Pomoc",
-                        :incorrect_try_again => "Tekst nieprawidłowy. spróbuj ponownie.",
+                        :incorrect_try_again => "Błąd. Spróbuj ponownie.",
                 }}) %>
   <%= submit_tag "Wyślij" %>
   <%= flash[:info] %>
@@ -25,4 +27,5 @@
   new LiveValidation('sender', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."}).add(Validate.Email, {failureMessage: "Podaj poprawny adres email."});
   new LiveValidation('title', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."});
   new LiveValidation('message', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."});
+  new LiveValidation('phone', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."}));
 </script>

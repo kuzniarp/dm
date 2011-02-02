@@ -1,5 +1,5 @@
 <h1><%= @item.name %>
-  <span class="right"><%= link_to "Zapytaj o cenę", contact_form_path(:product => @item.name) %></span>
+  <span class="right"><%= link_to "Zapytaj o cenę", contact_form_path(:product => @item.name) %> | <%= link_to "Zapytaj o części", contact_form_path(:title => "Pytanie o części do #{@item.name}") %></span></span>
 </h1>
 <div class="page">
   <%= @item.description %>
