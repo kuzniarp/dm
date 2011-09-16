@@ -21,11 +21,24 @@
                         :incorrect_try_again => "Błąd. Spróbuj ponownie.",
                 }}) %>
   <%= submit_tag "Wyślij" %>
-  <%= flash[:info] %>
+  <div id="notice">
+    <%= flash[:info] %>
+  </div>
 <% end %>
-<script>
-  new LiveValidation('sender', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."}).add(Validate.Email, {failureMessage: "Podaj poprawny adres email."});
-  new LiveValidation('title', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."});
-  new LiveValidation('message', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."});
-  new LiveValidation('phone', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."}));
-</script>
+<a href="#notice" id="notice_link" style="display:none;">&nbsp;</a>
+<script type="text/javascript" src="/javascripts/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.fancybox-1.3.4.pack.js"></script>
+<link rel="stylesheet" href="/stylesheets/jquery.fancybox-1.3.4.css" type="text/css" media="screen" />
+<% javascript_tag do %>
+ $(document).ready(function() {
+   $("#notice_link").fancybox({padding: 50, scrolling: 'no'});
+   new LiveValidation('sender', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."}).add(Validate.Email, {failureMessage: "Podaj poprawny adres email."});
+   new LiveValidation('title', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."});
+   new LiveValidation('message', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."});
+   new LiveValidation('phone', {validMessage: " ", onlyOnSubmit: true}).add(Validate.Presence, {failureMessage: "Pole wymagane."});
+   <% if flash[:info].present? %>
+     $('#notice_link').click();
+     <% flash[:info] = nil %>
+   <% end %>
+ });
+<% end %>

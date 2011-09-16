@@ -20,7 +20,7 @@ class HomeController < ApplicationController
     if verify_recaptcha && Mailer.deliver_contact_form(params[:sender], params[:title], params[:message], params[:phone])
       flash[:info] = "<span style=\"font-size:16px;\">Wiadomość została wysłana.</span>"
     else
-      flash[:info] = "<span style=\"font-size:16px;color:red;font-weight:bold;\">Nie udało się wysłać wiadomości.<span>"
+      flash[:info] = "<span style=\"font-size:16px;color:red;font-weight:bold;\">Nie udało się wysłać wiadomości.</span><br />Upewnij się, że formularz jest wypełniony poprawnie i spróbuj jeszcze raz."
     end
     render :action => 'contact'
   end
