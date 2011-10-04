@@ -33,7 +33,7 @@
 <body>
   <div id="wrapper">
 	<div id="header">
-	  <div style="margin:28px 0 0 10px;"><img src="/images/logo.png" alt="logo" /></div>
+	  <div style="display:none;margin:28px 0 0 10px;"><img src="/images/logo.png" alt="logo" /></div>
 		<div id="menu">
           <ul>
 			<% Subpage.find(:all, :conditions => "parent_id is null", :order => 'page_order').each do |subpage| %>

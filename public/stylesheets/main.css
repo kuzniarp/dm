@@ -17,10 +17,10 @@ h1,h2,h3,h4,h5,h6{font-size:1em;font-weight:bold}
 body,input,textarea,select,td{color:#66a;font-size:12px;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;background:#fff;}
 form{margin:5px 0;}
 input,textarea{border:1px solid #AAC;padding:2px;margin:2px 0 10px 0;}
-body{background:#C8C8C8 url(/images/body_bg.png) repeat-x;}
+body{background:#FFF url(/images/body_bg.jpg) repeat-x;}
 #wrapper{width:920px;height:auto;margin:0 auto;position:relative;}
-#header{background:url(/images/header_bg.png) no-repeat;width:880px;height:200px;padding:20px 20px 10px 20px;}
-#header #menu {position:relative;top:50px;padding:0 10px;font-size:16px;}
+#header{background:url(/images/header_bg.png) no-repeat;width:880px;height:190px;padding:20px 20px 10px 20px;}
+#header #menu {position:absolute;top:188px;padding:0 10px;font-size:16px;}
 #header #menu a{color:#d8d8d8;text-decoration:none;}
 #header #menu a:hover{color:#d8ffff;}
 #header #menu li{float:left;margin:0 20px;}
