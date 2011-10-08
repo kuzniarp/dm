@@ -3,7 +3,8 @@
 body{line-height:1}
 img,fieldset{border:0}
 img{vertical-align:bottom}
-a,a:hover{cursor:pointer;text-decoration:none;outline:none}
+a,a:hover{cursor:pointer;text-decoration:none;outline:none;color:#735B2E;}
+a:hover{color:#B39B2E;}
 a:hover{border:0} /* IE fix */
 ul{list-style:none}
 option{padding:0 .5em 0 1px}
@@ -38,7 +39,9 @@ h1 span{font-weight:normal;font-size:12px;}
 #main .icons td{padding:5px;border:1px solid #ddf;vertical-align:middle;}
 #main hr{opacity:0.5;margin-bottom:10px;}
 
-#main #content {width:840px;overflow:hidden;float:left;padding:0 20px;}
+#main #content {width:649px;overflow:hidden;float:left;padding:0 0 0 5px;border-left:1px solid #EEE}
+#main #side_menu {width:220px;overflow:hidden;float:left;padding:0 5px 0 0;}
+#main #side_menu li{border-bottom:1px solid #EEE;padding:2px 0;}
 #main .page {margin:4px 0;color:#66a;font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main .page p{font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main #sidebar p{margin:2px 0 4px;}
@@ -46,7 +49,7 @@ h1 span{font-weight:normal;font-size:12px;}
 #footer{background:url(/images/footer_bg.png) no-repeat;width:880px;height:60px;padding:0 20px 20px 20px;}
 .right {float:right;}
 table.list {width:100%;}
-table.list td {margin:5px; padding:5px;background-color:#eee;border-bottom:1px solid #ddd;}
+table.list td {margin:5px; padding:5px;border-bottom:1px solid #EEE;}
 
 .LV_validation_message {margin:0 0 0 10px;}
 .LV_invalid {color:#f00;}
