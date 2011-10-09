@@ -8,6 +8,8 @@
   <%= f.select :producer_id, Producer.all.map{|p| [p.name, p.id]} %><br />
   <%= f.label :category_id, "Kategoria" %><br />
   <%= f.select :category_id, Category.all.map{|p| [p.name, p.id]} %><br />
+  <%= f.label :new, "Nowosc" %><br />
+  <%= f.check_box :new %><br />
   <%= f.label :image, "Zdjęcie"  %><br />
   <%= image_tag @item.image.url(:thumb) if @item.image %>
   <%= f.file_field :image %><br />

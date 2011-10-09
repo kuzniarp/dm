@@ -8,10 +8,12 @@
   <% for product in products %>
   <tr>
     <td><%= link_to product.name, product_path(product) %></td>
-    <td><%= link_to image_tag(product.image.url(:thumb)), product_path(product) if product.image %></td>
-    <td>
+    <td><div style="position:relative"><%= image_tag('new.png', :style => "position:absolute;float:right;right:0;") if product.new? %><%= link_to image_tag(product.image.url(:thumb), :style => "float:right;"), product_path(product) if product.image %></div></td>
+    <td><div style="float:right;">
       <%= link_to "Zapytaj o cenę", contact_form_path(:product => product.name) %><br />
       <%= link_to "Zapytaj o części", contact_form_path(:title => "Pytanie o części do #{product.name}") %>
+      </div>
+      <div class="clear"></div>
     </td>
   </tr>
   <% end %>
