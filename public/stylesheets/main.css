@@ -42,7 +42,7 @@ h1 span{font-weight:normal;font-size:12px;}
 #main #content {width:649px;overflow:hidden;float:left;padding:0 0 0 5px;border-left:1px solid #EEE}
 #main #side_menu {width:220px;overflow:hidden;float:left;padding:0 5px 0 0;}
 #main #side_menu li{border-bottom:1px solid #EEE;padding:2px 0;}
-#main .page {margin:4px 0;color:#664;font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
+#main .page {margin:4px 0;color:#666;font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main .page p{font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main #sidebar p{margin:2px 0 4px;}
 #main #content p{margin:2px 0 4px;}
