@@ -15,18 +15,18 @@ h1,h2,h3,h4,h5,h6{font-size:1em;font-weight:bold}
 .clear{clear:both}
 
 /* fonts */
-body,input,textarea,select,td{color:#66a;font-size:12px;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;background:#fff;}
+body,input,textarea,select,td{color:#735B2E;font-size:12px;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;background:#fff;}
 form{margin:5px 0;}
-input,textarea{border:1px solid #AAC;padding:2px;margin:2px 0 10px 0;}
+input,textarea{border:1px solid #AA8;padding:2px;margin:2px 0 10px 0;}
 body{background:#FFF url(/images/body_bg.jpg) repeat-x;}
 #wrapper{width:920px;height:auto;margin:0 auto;position:relative;}
 #header{background:url(/images/header_bg.png) no-repeat;width:880px;height:190px;padding:20px 20px 10px 20px;}
 #header #menu {position:absolute;top:188px;padding:0 10px;font-size:16px;}
-#header #menu a{color:#d8d8d8;text-decoration:none;}
-#header #menu a:hover{color:#d8ffff;}
+#header #menu a{color:#d8d8a8;text-decoration:none;}
+#header #menu a:hover{color:#ffffd8;}
 #header #menu li{float:left;margin:0 20px;}
 #main{background:url(/images/main_bg.png) repeat-y;width:880px;height:auto;min-height:200px;padding:0 20px;line-height:1.6em;}
-h1,h2{background:#e8e8f8;padding:2px 3px;font-size:14px;}
+h1,h2{background:#f8f8e8;padding:2px 3px;font-size:14px;}
 h1 span{font-weight:normal;font-size:12px;}
 #main #sidebar {width:220px;margin-right:10px;float:left;}
 #main #sidebar block{border:1px solid #ddf;}
@@ -36,13 +36,13 @@ h1 span{font-weight:normal;font-size:12px;}
 
 #main ul.icons{text-align:center;}
 #main .icons {border-collapse:separate;border-spacing:10px;margin:0 auto;}
-#main .icons td{padding:5px;border:1px solid #ddf;vertical-align:middle;}
+#main .icons td{padding:5px;border:1px solid #ddb;vertical-align:middle;}
 #main hr{opacity:0.5;margin-bottom:10px;}
 
 #main #content {width:649px;overflow:hidden;float:left;padding:0 0 0 5px;border-left:1px solid #EEE}
 #main #side_menu {width:220px;overflow:hidden;float:left;padding:0 5px 0 0;}
 #main #side_menu li{border-bottom:1px solid #EEE;padding:2px 0;}
-#main .page {margin:4px 0;color:#66a;font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
+#main .page {margin:4px 0;color:#664;font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main .page p{font-size:13px !important;font-family:"Lucida Sans Unicode",helvetica,verdana,arial,sans-serif;}
 #main #sidebar p{margin:2px 0 4px;}
 #main #content p{margin:2px 0 4px;}
