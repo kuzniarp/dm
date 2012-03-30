@@ -61,7 +61,7 @@
 	<div id="side_menu">
     <h2>Kategorie</h2>
 	  <ul>
-	    <% Category.all.each do |category| %>
+	    <% Category.all(:order => :name).each do |category| %>
 	    <li><%= link_to category.name.titleize + " (#{category.products.count})", category_path(:id => category.permalink) %></li>
 	    <% end %>
 	  </ul>
