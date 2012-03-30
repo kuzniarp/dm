@@ -62,7 +62,7 @@
     <h2>Kategorie</h2>
 	  <ul>
 	    <% Category.all.each do |category| %>
-	    <li><%= link_to category.name.titleize, category_path(:id => category.permalink) %></li>
+	    <li><%= link_to category.name.titleize + " (#{category.products.count})", category_path(:id => category.permalink) %></li>
 	    <% end %>
 	  </ul>
     <h2>&nbsp;</h2>
