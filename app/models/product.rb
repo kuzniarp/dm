@@ -10,4 +10,7 @@ class Product < ActiveRecord::Base
   :url => "/system/:attachment/:class/:id/:style/:filename", :default_url => "/images/missing.png"
   has_permalink :name, :unique => true, :to_param => :permalink
 
+  def includes_video?
+    description.index('www.youtube.com/embed').present?
+  end
 end
