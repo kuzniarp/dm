@@ -1,0 +1,11 @@
+<fieldset><legend>Partner</legend>
+  <%= f.label :name, "Nazwa" %><br />
+  <%= f.text_field :name %><br />
+  <%= f.label :url, "Adres url" %><br />
+  <%= f.text_field :url, :size => 100 %><br />
+  <% @partner = @item %>
+  <%= f.label :image, "Logo"  %><br />
+  <%= image_tag @item.image.url(:thumb) if @item.image %>
+  <%= f.file_field :image %><br />
+  <%= f.submit "Zapisz" %>
+</fieldset>

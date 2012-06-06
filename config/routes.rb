@@ -28,11 +28,13 @@ ActionController::Routing::Routes.draw do |map|
   # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
     admin.resources :products
     admin.resources :producers
+    admin.resources :partners
     admin.resources :categories
   end
 
   #map.resources :products, :has_one => :category, :has_one => :producer    
   map.resources :producers
+  map.resources :partners
   map.resources :products
   map.resources :categories	
   map.contact_form "/formularz_kontaktowy", :controller => "home", :action => "contact"
