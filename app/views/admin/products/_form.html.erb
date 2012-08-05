@@ -10,6 +10,8 @@
   <%= f.select :category_id, Category.all.map{|p| [p.name, p.id]} %><br />
   <%= f.label :new, "Nowosc" %><br />
   <%= f.check_box :new %><br />
+  <%= f.label :sold_out, "Sprzedane" %><br />
+  <%= f.check_box :sold_out %><br />
   <%= f.label :image, "Zdjęcie"  %><br />
   <%= image_tag @item.image.url(:thumb) if @item.image %>
   <%= f.file_field :image %><br />

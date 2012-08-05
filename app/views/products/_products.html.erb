@@ -8,7 +8,7 @@
   <% for product in products %>
   <tr>
     <td><%= link_to product.name, product_path(product) %></td>
-    <td><div style="position:relative;float:right;"><%= image_tag('new.png', :style => "position:absolute;float:right;right:0;") if product.new? %><%= link_to image_tag(product.image.url(:thumb), :style => "float:right;"), product_path(product) if product.image %></div><div style="float:right;margin:8px 5px 2px;"><%= link_to(image_tag('video.jpg', :height => 60), product_path(product)) if product.includes_video? %></div></td>
+    <td><div style="position:relative;float:right;"><%= image_tag(product.sold_out? ? 'sold_out.png' : 'new.png', :style => "position:absolute;float:right;right:0;") if product.new? || product.sold_out? %><%= link_to image_tag(product.image.url(:thumb), :style => "float:right;"), product_path(product) if product.image %></div><div style="float:right;margin:8px 5px 2px;"><%= link_to(image_tag('video.jpg', :height => 60), product_path(product)) if product.includes_video? %></div></td>
     <td><div style="float:right;">
       <%= link_to "Zapytaj o cenę", contact_form_path(:product => product.name) %><br />
       <%= link_to "Zapytaj o części", contact_form_path(:title => "Pytanie o części do #{product.name}") %>
